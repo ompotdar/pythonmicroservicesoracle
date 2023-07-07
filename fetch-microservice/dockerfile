@@ -1,0 +1,10 @@
+FROM python:3.11.4
+
+COPY . /app
+WORKDIR /app
+EXPOSE 5001
+RUN mkdir -p /app/tsv
+RUN pip install oracledb
+RUN pip install flask
+
+CMD python fetchdata.py

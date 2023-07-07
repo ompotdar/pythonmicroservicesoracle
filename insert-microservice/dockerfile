@@ -1,0 +1,10 @@
+FROM python:3.11.4
+
+COPY . /app
+WORKDIR /app
+EXPOSE 8000
+RUN pip install oracledb
+RUN pip install flask
+
+
+CMD python insertdata.py
