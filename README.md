@@ -17,6 +17,7 @@ I have used flask module for python to access api locally, where the get and pos
 the oracledb module is used to connect with oracle db.
 The fetch microservice collects the data from the database and store it in file named employee_details.tsv locally
 docker volume is mounted to run the and fetch the file.
+code inside "//  //" is a input for user to be entered.
 
 commands to be run on folder :
 docker commands to run on insert data microservice:
