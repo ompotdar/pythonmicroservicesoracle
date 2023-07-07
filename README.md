@@ -20,19 +20,19 @@ docker volume is mounted to run the and fetch the file.
 
 commands to be run on folder :
 docker commands to run on insert data microservice:
-1. docker build -t <imagenameasrequired> .
-2. docker run -p 5001:5001 -d --name <asrequiredcontainername> -e db_user='<username>' -e db_pass='<dbpassword>' -e db_host='<inserthostip>' -e db_service='<dbservicename' <imagenamecreatedfromstep1>
+1. docker build -t //imagenameasrequired// .
+2. docker run -p 5001:5001 -d --name //asrequiredcontainername// -e db_user='//username//' -e db_pass='//dbpassword//' -e db_host='//inserthostip//' -e db_service='//dbservicename//' //imagenamecreatedfromstep1//
 3. pass the data to the microservice via postman ( sample data mentioned below ).
 
 
 1. docker build -t <imagenameasrequired> .
-2. docker run -p 5001:5001 -d --name <asrequiredcontainername> -e db_user='<username>' -e db_pass='<dbpassword>' -e db_host='<inserthostip>' -e db_service='<dbservicename' -v <localabsolutepathtogetthetsvfile>:/app/tsv <imagenamecreatedfromstep1>
+2. docker run -p 5001:5001 -d --name //asrequiredcontainername// -e db_user='//username//' -e db_pass='//dbpassword//' -e db_host='//inserthostip//' -e db_service='//dbservicename//' -v //localabsolutepathtogetthetsvfile//:/app/tsv //imagenamecreatedfromstep1//
 
 For scheduling the code to run exact at particular time of day (00.00) we can use cron.
 commands and steps to used :
 1.install cron inside the host
 2.run command: 
-0 0 * * * <docker run command to start insert db data microservice> && <docker run command to start fetch data from db microservice>
+0 0 * * * //docker run command to start insert db data microservice// && //docker run command to start fetch data from db microservice//
 3. The above will the container at 00.00 local time sequentially, meaning second docker run command will run only if the first is successful.
 
 
